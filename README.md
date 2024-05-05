@@ -1,6 +1,6 @@
-# Leveraging Local and Global Matching in Graph Neural Networks for Seedless Graph Matching
+# Leveraging Local and Global Matching in GNN-based Seedless Graph Matching
 
-This repository is the implementation of "Leveraging Local and Global Matching in Graph Neural Networks for Seedless Graph Matching".
+This repository is the implementation of "Leveraging Local and Global Matching in GNN-based Seedless Graph Matching".
 
 ## Requirements
 
@@ -28,18 +28,18 @@ To train the model(s) in the paper, run this command:
 ```
 python trainER.py
 ```
+## Pre-trained Models
 
-Then, a file of the trained model, named 'SeedGNN-model-trained.pth', will be generated and stored in the folder './model'.
+A file of the trained model, named 'SeedGNN-model-trained.pth', will be generated and stored in the folder './model'.
 
 ## Evaluation
 
-* To evaluate our model on ER graphs, run:
-
+* To evaluate our model on ER graphs with varying correlation $s$ in Figure. 8 and Figure 9, run:
 ```
 python TestERs.py
 ```
 
-* To evaluate the NTMA algorithm and Degree profile algorithm on ER graphs,run:
+* To evaluate the NTMA algorithm and Degree profile algorithm on ER graphs with varying correlation $s$ in Figure 9, run:
 ```
 python TestERntma.py
 ```
@@ -47,11 +47,11 @@ and
 ```
 python TestERdp.py
 ```
-* To evaluate our model on Facebook networks, run:
+
+* To evaluate our model on Facebook networks in Figrue 10, run:
 ```
 python TestFB.py
 ```
-* To evaluate our model on Shrec'16 dataset, run:
-```
-python TestShrec16.py
-```
+
+
+
