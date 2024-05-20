@@ -6,7 +6,7 @@ from scipy import sparse as sp
 from scipy.optimize import linear_sum_assignment
 import torch
 import scipy.io
-from graspologic.match import GraphMatch as GMP
+# from graspologic.match import GraphMatch as GMP
 from multiprocessing import Pool
 from itertools import repeat,product
 
@@ -233,12 +233,12 @@ def PGM(G1,G2,seeds):
             if i not in seeds[0] and W1[i,results[i]] >=2:
                 Seeds[i,results[i]] = 1
     return results
-def SGM(G1,G2,seeds):
-    sgm = GMP()
-    indexes = sgm.fit(G1.detach().numpy(),G2.detach().numpy(),
-                          seeds[0].detach().numpy(),seeds[1].detach().numpy())
-    result = torch.tensor(indexes.perm_inds_)
-    return result
+# def SGM(G1,G2,seeds):
+#     sgm = GMP()
+#     indexes = sgm.fit(G1.detach().numpy(),G2.detach().numpy(),
+#                           seeds[0].detach().numpy(),seeds[1].detach().numpy())
+#     result = torch.tensor(indexes.perm_inds_)
+#     return result
 
 def SGM2(G1, G2, seeds, Itera = 20):
     
