@@ -140,7 +140,7 @@ def test(test_dataset):
 
 def run(train_dataset, test_dataset):
 
-    path = "./model/Seedless-prod-8-50.pth"
+    path = "./model/LGM-GNN-new.pth"
 #     model.load_state_dict(torch.load(path))
     model.reset_parameters()
 
@@ -173,13 +173,15 @@ if __name__ == '__main__':
     n = 100
     p = n**(-1 / 3)
     s = 0.85
-    graph_para = [(n, p, s)]
-    numgraphs = 100
+    graph_para = [(n, 0.05, 1.0),(n, 0.1, 0.8),(n, 0.2, 0.6),
+                  (n, 0.05, 1.0),(n, 0.1, 0.8),(n, 0.2, 0.6),
+                  (n, 0.05, 1.0),(n, 0.1, 0.8),(n, 0.2, 0.6)]
+    numgraphs = 10
     print(graph_para)
     for n, p, s in graph_para:
-        for _ in range(50):
-            train_dataset.append(Correlated_ER_Graph(n, p, s))
         for _ in range(numgraphs):
+            train_dataset.append(Correlated_ER_Graph(n, p, s))
+        for _ in range(10):
             test_dataset.append(Correlated_ER_Graph(n, p, s))
 
     print('Done!')

@@ -243,8 +243,8 @@ def run(n,p,S,Itera):
     print('dp4 = '.ljust(10), dp4)
 
 
-n = 100
-p = 0.2
+n = 1000
+p = 0.01
 S = [0.99, 0.97, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6]
 # S = [0.85]
 Itera = 10
@@ -252,10 +252,13 @@ start_time = time.time()
 run(n, p, S, Itera)
 print("--- %s seconds ---" % (time.time() - start_time))
 
-# print('-----------------------------------------------')
+print('-----------------------------------------------')
 
-# n = 1000
-# p = 0.1
-# S = [0.99,0.97, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6]
-# Itera = 1
-# run(n,p,S,Itera)
+n = 1000
+p = 0.1
+S = [0.99, 0.97, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6]
+# S = [0.85]
+Itera = 10
+start_time = time.time()
+run(n, p, S, Itera)
+print("--- %s seconds ---" % (time.time() - start_time))

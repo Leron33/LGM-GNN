@@ -190,9 +190,6 @@ def run(n,p,S,Itera):
     print(f'Parameters: n={n}, p={p}')
     print('Accuracy')
     print('s = '.ljust(10), S)
-    print('GNN = '.ljust(10),gnn)
-    print('ntma = '.ljust(10), ntma)
-    print('dp = '.ljust(10), dp)
     print('ntma1 = '.ljust(10), ntma1)
     print('ntma2 = '.ljust(10), ntma2)
     print('ntma3 = '.ljust(10), ntma3)
@@ -202,18 +199,20 @@ def run(n,p,S,Itera):
 # model.load_state_dict(torch.load(path))
 # open('TestER2.txt', 'w')
 
-n = 100
-p = 0.05
+n = 1000
+p = 0.1
 S = [0.99,0.97, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6]
 Itera = 10
 start_time = time.time()
 run(n, p, S, Itera)
 print("--- %s seconds ---" % (time.time() - start_time))
 
-# print('-----------------------------------------------')
+print('-----------------------------------------------')
 
-# n = 1000
-# p = 0.1
-# S = [0.99,0.97, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6]
-# Itera = 1
-# run(n,p,S,Itera)
+n = 1000
+p = 0.01
+S = [0.99,0.97, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6]
+Itera = 10
+start_time = time.time()
+run(n, p, S, Itera)
+print("--- %s seconds ---" % (time.time() - start_time))
