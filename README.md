@@ -18,19 +18,18 @@ This repository is the implementation of "Leveraging Local and Global Matching i
 The data of facebook networks used in our paper can be downloaded [here](https://archive.org/download/oxford-2005-facebook-matrix/facebook100.zip). 
 Then, unzip the downloaded file and put the folder 'facebook100' under the folder './data'.
 
-The Shrec'16 dataset can be downloaded [here](https://vision.in.tum.de/~laehner/shrec2016/files/TOPKIDS_lowres.zip). 
-Then, unzip the downloaded file, rename the folder 'low resolution' as 'low_resolution', and put this folder under the folder './data'.
-
 ## Training
 
 To train the model(s) in the paper, run this command:
 
 ```
-python trainER.py
+python TrainER.py
 ```
+A file of the trained model, named as "LGM-GNN-new.pth", will be generated and stored in the folder './model'.
+
 ## Pre-trained Models
 
-A file of the trained model, named 'SeedGNN-model-trained.pth', will be generated and stored in the folder './model'.
+A file of a pre-trained model, named 'Seedless-prod-8.pth', is stored in the folder './model'.
 
 ## Evaluation
 
