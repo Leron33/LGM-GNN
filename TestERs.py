@@ -33,6 +33,7 @@ torch.manual_seed(42)
 
 args, unknown = parser.parse_known_args()
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = "cpu"
 model = GNNGM(args.num_layers, args.gnn_layers,args.hid).to(device)
 
 def Correlated_ER_Graph(n, p, s):
@@ -107,7 +108,7 @@ def run(n,p,S,Itera):
             
            
 
-    gnn = gnn/Itera
+    gnn = gnn[-1,:]/Itera
     with open('TestERs.txt', 'a') as f:
         f.write(f'n={n}, p={p}, s={S}\n')
         f.write(f'GMN = {gnn}\n')
